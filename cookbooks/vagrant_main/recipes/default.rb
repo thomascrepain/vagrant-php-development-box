@@ -33,17 +33,17 @@ include_recipe "xdebug"
 
 include_recipe "mysql::server"
 
-include_recipe "mongodb::10gen_repo"
-include_recipe "mongodb"
+#include_recipe "mongodb::10gen_repo"
+#include_recipe "mongodb"
 
 package "nfs-kernel-server"
-package "ghostscript"
+#package "ghostscript"
 package "git-core"
 package "imagemagick"
 package "memcached"
-package "nodejs"
+#package "nodejs"
 package "npm"
-package "sqlite"
+#package "sqlite"
 package "vim"
 
 package "php-apc"
@@ -61,9 +61,9 @@ package "php5-sqlite"
 package "php5-tidy"
 package "php5-xmlrpc"
 
-php_pear "mongo" do
-  action :install
-end
+# php_pear "mongo" do
+#  action :install
+# end
 
 gem_package "less"
 gem_package "sass"
