@@ -34,6 +34,7 @@ A Vagrant project which aims you to get a feature rich **PHP** development box (
     MySQL user:         root
     MySQL password:     root
     xDebug Remote:      33.33.33.1
+	Mailcatcher:		http://33.33.33.10:1080 
 
 ## Configure your projects
 
@@ -85,4 +86,5 @@ Some projects from which I took the code and inspiration, thanks!
  - [symfony-vagrant](https://github.com/simshaun/symfony-vagrant)
  - [veewee](https://github.com/jedi4ever/veewee)
  - Chef Cookbooks: look for README.md inside each directories' for details.
+ - [r8/vagrant-lamp] (https://github.com/r8/vagrant-lamp) for the mailcatcher code
 
