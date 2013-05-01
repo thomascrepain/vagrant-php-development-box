@@ -32,6 +32,7 @@ include_recipe "composer"
 include_recipe "xdebug"
 
 include_recipe "mysql::server"
+include_recipe "mailcatcher::default"
 
 #include_recipe "mongodb::10gen_repo"
 #include_recipe "mongodb"
@@ -65,27 +66,9 @@ package "php5-xmlrpc"
 #  action :install
 # end
 
-%w{ rake mailcatcher }.each do |a_gem|
-  gem_package a_gem
-end
-
 gem_package "less"
 gem_package "sass"
 gem_package "compass"
-
-# Setup MailCatcher
-bash "mailcatcher" do
-  code "mailcatcher --http-ip #{eth1_ip} --smtp-port 25"
-	not_if "ps ax | grep -v grep | grep mailcatcher";
-end
-template "#{node['php']['ext_conf_dir']}/mailcatcher.ini" do
-  source "mailcatcher.ini.erb"
-  owner "root"
-  group "root"
-  mode "0644"
-  action :create
-  notifies :restart, resources("service[apache2]"), :delayed
-end
 
 template "/etc/php5/apache2/conf.d/custom_conf.ini" do
   source "php.conf.erb"

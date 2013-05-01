@@ -1,0 +1,3 @@
+[submodule "cookbooks/mailcatcher"]
+	path = cookbooks/mailcatcher
+	url = git://github.com/andruby/mailcatcher.git
